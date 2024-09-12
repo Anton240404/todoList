@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./componets/testArray"
+import "./componets/generics"
 
 function App() {
     const [text, setText] = useState("")
