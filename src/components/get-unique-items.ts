@@ -1,7 +1,3 @@
-function getUniqueItems(items: number[]) {}
-
-getUniqueItems([1, 1, 2, 2, 3, 3]) // [1,2,3]
-
 // type User = {
 //   name: string
 //   age: number

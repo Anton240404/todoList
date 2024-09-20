@@ -78,16 +78,19 @@
 // console.log(_filter<number>(arr5, (x) => x > 2))
 // console.log("============")
 //
-function _find<T>(array: T[], callback: (value: T, index: number, array: T[]) => boolean): T | undefined {
-    for (let i = 0; i < array.length; i++) {
-        if (callback(array[i], i, array)) {
-            return array[i]
-        }
+function _find<T>(
+  array: T[],
+  callback: (value: T, index: number, array: T[]) => boolean
+): T | undefined {
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i], i, array)) {
+      return array[i];
     }
-    return undefined
+  }
+  return undefined;
 }
-const arr6 = [1, 2, 3, 4, 5, 3, 6]
-console.log(_find<number>(arr6, (x) => x === 3))
+const arr6 = [1, 2, 3, 4, 5, 3, 6];
+console.log(_find<number>(arr6, (x) => x === 3));
 //
 // console.log("=================")
 //
