@@ -1,11 +1,6 @@
 import React from 'react';
 import { CustomButtonProps } from './utils/type';
 
-// type Obj = {
-//     data: string
-//     count: number
-// }
-
 export function Button({
     text,
     textColor = 'black',

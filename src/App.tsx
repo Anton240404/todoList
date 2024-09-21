@@ -1,4 +1,5 @@
 import { ReactNode, useState } from 'react';
+import { Button } from './components/print-sum-text';
 
 function App() {
     const [text, setText] = useState('');
@@ -14,34 +15,30 @@ function App() {
     const handleClickDelete = (index: number) => {
         const copyTodos = [...todos];
         copyTodos.splice(index, 1);
-        setText(copyTodos);
+        setTodos(copyTodos);
     };
+
     return (
         <div>
-            <ul>
-                {nums.map((x, i) => (
-                    <li key={i}>
-                        <input type="text" />
-                        text = {x.text}{' '}
-                        <button
-                            onClick={() => {
-                                const copy = [...nums];
-                                copy.splice(i, 1);
-                                setNums(copy);
-                            }}
-                        >
-                            Delete
-                        </button>
-                    </li>
-                ))}
-            </ul>
-            {/* <button onClick={handleClickDelete}></button>
+            {/* {todos.map...} */}
+            <Button text="Hello" borderRadius="0px" textColor="red" />
+
+            <Tabs
+                items={[
+                    {
+                        title: 'Контакты',
+                        content: 'Контент для вкладки Контакты',
+                    },
+                ]}
+            />
+
+            <button onClick={() => handleClickDelete(2)}>Удалить</button>
             <input
                 type="text"
                 onChange={(e) => setText(e.target.value)}
                 value={text}
             />
-            <button onClick={() => handleClickText()}>click</button> */}
+            <button onClick={() => handleClickText()}>Добавить туду</button>
         </div>
     );
 }
