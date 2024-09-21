@@ -10,6 +10,7 @@ function App() {
     setTodos(copyTodos);
     setText('');
   };
+  
   const handleClickDelete = (index: number) => {
     const copyTodos = [...todos];
     copyTodos.splice(index, 1);
