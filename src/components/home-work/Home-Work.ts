@@ -5,11 +5,14 @@ function _includes<T>(arr: T[], value: T): boolean {
     return false;
 }
 
-function getUniqueItems<T>(items: T[], compareFn: (a: T, b: T) => boolean): T[] {
+function getUniqueItems<T>(
+    items: T[],
+    compareFn: (a: T, b: T) => boolean
+): T[] {
     const uniqueItems: T[] = [];
 
     items.forEach((item) => {
-        if (!uniqueItems.some((uniqueItem) => compareFn(item, uniqueItem))) {
+        if (!uniqueItems.includes(item)) {
             uniqueItems.push(item);
         }
     });
