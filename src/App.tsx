@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from './components/print-sum-text';
+import TypesInReact from './components/home-work/typesInReact.tsx';
 
 function App() {
     const [text, setText] = useState('');
@@ -20,12 +21,13 @@ function App() {
 
     return (
         <div>
-            {/* {todos.map...} */}
             <Button text="Hello" borderRadius="0px" textColor="red" />
+            <TypesInReact />
 
             {todos.map((value, index) => (
                 <p>
                     value = {value}, index = {index}
+                    <button onClick={() => deleteTodo(index)}>Удалить</button>
                 </p>
             ))}
 
@@ -42,7 +44,6 @@ function App() {
                 </p>,
             ]}
 
-            <button onClick={() => deleteTodo(2)}>Удалить</button>
             <input
                 type="text"
                 onChange={(e) => setText(e.target.value)}
