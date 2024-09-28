@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DisplayTypes = () => {
+export const DisplayTypes = () => {
     const string = 'string';
     const number = 42;
     const booleanTrue = true;
@@ -41,5 +41,3 @@ const DisplayTypes = () => {
         </div>
     );
 };
-
-export default DisplayTypes;

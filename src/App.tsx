@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from './components/print-sum-text';
-import TypesInReact from './components/home-work/types-in-react';
+import { DisplayTypes } from './components/home-work/types-in-react';
 import { uuid } from './components/utils/uuid';
 
 type Todo = {
@@ -13,7 +13,7 @@ type Todo = {
 // 1) Добавить создание туду по нажатию на Enter
 // 2) Привести список в человеческий вид
 
-function App() {
+export const App = () => {
     const [text, setText] = useState('');
     const [todos, setTodos] = useState<Todo[]>([
         { id: uuid(), text: 'Начальное дело' },
@@ -39,7 +39,7 @@ function App() {
     return (
         <div>
             <Button text="Hello" borderRadius="0px" textColor="red" />
-            <TypesInReact />
+            <DisplayTypes />
 
             {todos.map((todo, index) => (
                 <p key={todo.id}>
@@ -56,6 +56,4 @@ function App() {
             <button onClick={() => addTodo()}>Добавить туду</button>
         </div>
     );
-}
-
-export default App;
+};
