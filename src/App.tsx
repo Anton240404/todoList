@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Button } from './components/button';
 import { uuid } from './components/utils/uuid';
+import { A } from './components/a';
+import { B } from './components/b';
 
 type Todo = {
     // id: number; // 1 2 3 4 5
@@ -11,6 +13,7 @@ type Todo = {
 // Домашка
 // 1) Добавить создание туду по нажатию на Enter
 // 2) Привести список в человеческий вид
+// 3) Стили всегда подключаются глобально
 
 export const App = () => {
     const [text, setText] = useState('');
@@ -38,6 +41,9 @@ export const App = () => {
     return (
         <div>
             <Button text="Hello" borderRadius="0px" textColor="red" />
+
+            <A />
+            <B />
 
             {todos.map((todo, index) => (
                 <p key={todo.id}>
