@@ -1,14 +1,31 @@
 import { useState } from 'react';
 import { Button } from './components/print-sum-text';
-import TypesInReact from './components/home-work/typesInReact.tsx';
+import TypesInReact from './components/home-work/types-in-react';
+import { uuid } from './components/utils/uuid';
+
+type Todo = {
+    // id: number; // 1 2 3 4 5
+    id: string;
+    text: string;
+};
+
+// Домашка
+// 1) Добавить создание туду по нажатию на Enter
+// 2) Привести список в человеческий вид
 
 function App() {
     const [text, setText] = useState('');
-    const [todos, setTodos] = useState<string[]>(['A', 'B', 'C']);
+    const [todos, setTodos] = useState<Todo[]>([
+        { id: uuid(), text: 'Начальное дело' },
+        { id: uuid(), text: 'Другое дело' },
+    ]);
 
     const addTodo = () => {
         const copyTodos = [...todos];
-        copyTodos.push(text);
+        copyTodos.push({
+            text: text,
+            id: uuid(),
+        });
         setTodos(copyTodos);
         setText('');
     };
@@ -24,25 +41,12 @@ function App() {
             <Button text="Hello" borderRadius="0px" textColor="red" />
             <TypesInReact />
 
-            {todos.map((value, index) => (
-                <p>
-                    value = {value}, index = {index}
+            {todos.map((todo, index) => (
+                <p key={todo.id}>
+                    {todo.text}, id = {todo.id}
                     <button onClick={() => deleteTodo(index)}>Удалить</button>
                 </p>
             ))}
-
-            {[
-                <p>
-                    value = {'A'}, index = {0}
-                    <button onClick={() => console.log(123)}>Delete</button>
-                </p>,
-                <p>
-                    value = {'B'}, index = {1}
-                </p>,
-                <p>
-                    value = {'C'}, index = {2}
-                </p>,
-            ]}
 
             <input
                 type="text"
