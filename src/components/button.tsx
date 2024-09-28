@@ -1,4 +1,3 @@
-import React from 'react';
 import { CustomButtonProps } from './utils/type';
 
 export function Button({

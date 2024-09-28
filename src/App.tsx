@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Button } from './components/print-sum-text';
-import { DisplayTypes } from './components/home-work/types-in-react';
+import { Button } from './components/button';
 import { uuid } from './components/utils/uuid';
 
 type Todo = {
@@ -39,7 +38,6 @@ export const App = () => {
     return (
         <div>
             <Button text="Hello" borderRadius="0px" textColor="red" />
-            <DisplayTypes />
 
             {todos.map((todo, index) => (
                 <p key={todo.id}>
