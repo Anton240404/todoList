@@ -1,19 +1,11 @@
-import { useState } from 'react';
-import { Button } from './components/button';
+import React, { useState } from 'react';
 import { uuid } from './components/utils/uuid';
-import { A } from './components/a';
-import { B } from './components/b';
+import './components/css/todo.css';
 
 type Todo = {
-    // id: number; // 1 2 3 4 5
     id: string;
     text: string;
 };
-
-// Домашка
-// 1) Добавить создание туду по нажатию на Enter
-// 2) Привести список в человеческий вид
-// 3) Стили всегда подключаются глобально
 
 export const App = () => {
     const [text, setText] = useState('');
@@ -23,13 +15,10 @@ export const App = () => {
     ]);
 
     const addTodo = () => {
-        const copyTodos = [...todos];
-        copyTodos.push({
-            text: text,
-            id: uuid(),
-        });
-        setTodos(copyTodos);
-        setText('');
+        if (text.trim() !== '') {
+            setTodos([...todos, { id: uuid(), text }]);
+            setText('');
+        }
     };
 
     const deleteTodo = (index: number) => {
@@ -38,26 +27,40 @@ export const App = () => {
         setTodos(copyTodos);
     };
 
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            addTodo();
+        }
+    };
+
     return (
-        <div>
-            <Button text="Hello" borderRadius="0px" textColor="red" />
+        <div className="todo-app">
+            <h1>Мой список дел</h1>
 
-            <A />
-            <B />
+            <div className="todo-list">
+                {todos.map((todo, index) => (
+                    <div className="todo-item" key={todo.id}>
+                        <p>{todo.text}</p>
+                        <button
+                            className="delete-btn"
+                            onClick={() => deleteTodo(index)}
+                        >
+                            Удалить
+                        </button>
+                    </div>
+                ))}
+            </div>
 
-            {todos.map((todo, index) => (
-                <p key={todo.id}>
-                    {todo.text}, id = {todo.id}
-                    <button onClick={() => deleteTodo(index)}>Удалить</button>
-                </p>
-            ))}
-
-            <input
-                type="text"
-                onChange={(e) => setText(e.target.value)}
-                value={text}
-            />
-            <button onClick={() => addTodo()}>Добавить туду</button>
+            <div className="todo-input">
+                <input
+                    type="text"
+                    placeholder="Добавить новое дело"
+                    onChange={(e) => setText(e.target.value)}
+                    value={text}
+                    onKeyDown={handleKeyPress}
+                />
+                <button onClick={() => addTodo()}>Добавить туду</button>
+            </div>
         </div>
     );
 };
