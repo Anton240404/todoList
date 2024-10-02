@@ -18,6 +18,8 @@ export const App = () => {
         if (text.trim() !== '') {
             setTodos([...todos, { id: uuid(), text }]);
             setText('');
+        } else {
+            alert('Введите правильное значение!');
         }
     };
 
@@ -40,7 +42,7 @@ export const App = () => {
             <div className="todo-list">
                 {todos.map((todo, index) => (
                     <div className="todo-item" key={todo.id}>
-                        <p>{todo.text}</p>
+                        <p className="todo-text">{todo.text}</p>
                         <button
                             className="delete-btn"
                             onClick={() => deleteTodo(index)}
@@ -54,12 +56,12 @@ export const App = () => {
             <div className="todo-input">
                 <input
                     type="text"
-                    placeholder="Добавить новое дело"
+                    placeholder="Текст"
                     onChange={(e) => setText(e.target.value)}
                     value={text}
                     onKeyDown={handleKeyPress}
                 />
-                <button onClick={() => addTodo()}>Добавить туду</button>
+                <button onClick={() => addTodo()}>Добавить</button>
             </div>
         </div>
     );
