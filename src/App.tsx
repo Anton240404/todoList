@@ -5,32 +5,43 @@ import './components/css/todo.css';
 type Todo = {
     id: string;
     text: string;
+    description: string;
 };
 
 export const App = () => {
     const [text, setText] = useState('');
+    const [description, setDescription] = useState('');
     const [todos, setTodos] = useState<Todo[]>([
-        { id: uuid(), text: 'Начальное дело' },
-        { id: uuid(), text: 'Другое дело' },
+        {
+            id: uuid(),
+            text: 'Начальное дело',
+            description: 'Описание начального дела',
+        },
+        {
+            id: uuid(),
+            text: 'Другое дело',
+            description: 'Описание другого дела',
+        },
     ]);
 
     const addTodo = () => {
-        if (text.trim() !== '') {
-            setTodos([...todos, { id: uuid(), text }]);
+        if (text.trim() !== '' && description.trim() !== '') {
+            setTodos([...todos, { id: uuid(), text, description }]);
             setText('');
+            setDescription('');
         } else {
             alert('Введите правильное значение!');
         }
     };
 
-    const deleteTodo = (index: number) => {
-        const copyTodos = [...todos];
-        copyTodos.splice(index, 1);
-        setTodos(copyTodos);
+    const deleteTodo = (id: string) => {
+        const filterTodos = todos.filter((todo) => todo.id !== id);
+        setTodos(filterTodos);
     };
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
+            e.preventDefault();
             addTodo();
         }
     };
@@ -38,30 +49,41 @@ export const App = () => {
     return (
         <div className="todo-app">
             <h1>Мой список дел</h1>
+            <div className="todo-input">
+                <input
+                    type="text"
+                    placeholder="Название туду"
+                    onChange={(e) => setText(e.target.value)}
+                    value={text}
+                    onKeyDown={handleKeyPress}
+                />
+                <textarea
+                    placeholder="Описание туду"
+                    onChange={(e) => setDescription(e.target.value)}
+                    value={description}
+                />
+
+                <button
+                    onClick={() => addTodo()}
+                    disabled={text.trim() === '' || description.trim() === ''}
+                >
+                    Добавить
+                </button>
+            </div>
 
             <div className="todo-list">
-                {todos.map((todo, index) => (
+                {todos.map((todo) => (
                     <div className="todo-item" key={todo.id}>
-                        <p className="todo-text">{todo.text}</p>
+                        <h1 className="todo-text">{todo.text}</h1>
+                        <p>{todo.description}</p>
                         <button
                             className="delete-btn"
-                            onClick={() => deleteTodo(index)}
+                            onClick={() => deleteTodo(todo.id)}
                         >
                             Удалить
                         </button>
                     </div>
                 ))}
-            </div>
-
-            <div className="todo-input">
-                <input
-                    type="text"
-                    placeholder="Текст"
-                    onChange={(e) => setText(e.target.value)}
-                    value={text}
-                    onKeyDown={handleKeyPress}
-                />
-                <button onClick={() => addTodo()}>Добавить</button>
             </div>
         </div>
     );
