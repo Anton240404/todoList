@@ -35,8 +35,8 @@ export const App = () => {
     };
 
     const deleteTodo = (id: string) => {
-        const filterTodos = todos.filter((todo) => todo.id !== id);
-        setTodos(filterTodos);
+        const filteredTodos = todos.filter((todo) => todo.id !== id);
+        setTodos(filteredTodos);
     };
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -46,11 +46,14 @@ export const App = () => {
         }
     };
 
+    const disabled = text.trim() === '' || description.trim() === '';
+
     return (
         <div className="todo-app">
             <h1>Мой список дел</h1>
-            <div className="todo-input">
+            <div>
                 <input
+                    className="todo-input"
                     type="text"
                     placeholder="Название туду"
                     onChange={(e) => setText(e.target.value)}
@@ -58,14 +61,16 @@ export const App = () => {
                     onKeyDown={handleKeyPress}
                 />
                 <textarea
+                    className="todo-textarea"
                     placeholder="Описание туду"
                     onChange={(e) => setDescription(e.target.value)}
                     value={description}
                 />
 
                 <button
+                    className={`todo-button ${disabled ? 'todo-button-disabled' : ''}`}
                     onClick={() => addTodo()}
-                    disabled={text.trim() === '' || description.trim() === ''}
+                    disabled={disabled}
                 >
                     Добавить
                 </button>
@@ -74,8 +79,8 @@ export const App = () => {
             <div className="todo-list">
                 {todos.map((todo) => (
                     <div className="todo-item" key={todo.id}>
-                        <h1 className="todo-text">{todo.text}</h1>
-                        <p>{todo.description}</p>
+                        <h1 className="todo-title">{todo.text}</h1>
+                        <p className="todo-text">{todo.description}</p>
                         <button
                             className="delete-btn"
                             onClick={() => deleteTodo(todo.id)}
@@ -85,6 +90,8 @@ export const App = () => {
                     </div>
                 ))}
             </div>
+
+            {/* <Button text="Добавить" colorVariant="success" | "danger" | "warning" onClick={() => console.log('Click')} /> */}
         </div>
     );
 };
