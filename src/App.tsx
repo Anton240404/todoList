@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { uuid } from './components/utils/uuid';
+import './components/css/reset.css';
 import './components/css/todo.css';
+import { A } from './components/a';
+import { B } from './components/b';
+import { Button } from './components/button/button';
+import { AddButton } from './components/add-button/add-button';
 
 type Todo = {
     id: string;
@@ -46,11 +51,12 @@ export const App = () => {
         }
     };
 
-    const disabled = text.trim() === '' || description.trim() === '';
-
     return (
         <div className="todo-app">
             <h1>Мой список дел</h1>
+            <A />
+            <B />
+            <Button />
             <div>
                 <input
                     className="todo-input"
@@ -67,15 +73,14 @@ export const App = () => {
                     value={description}
                 />
 
-                <button
-                    className={`todo-button ${disabled ? 'todo-button-disabled' : ''}`}
-                    onClick={() => addTodo()}
-                    disabled={disabled}
-                >
-                    Добавить
-                </button>
+                <AddButton
+                    color="green"
+                    addTodo={() => addTodo()}
+                    disabled={text.trim() === '' || description.trim() === ''}
+                />
             </div>
 
+            {/* <TodoList /> */}
             <div className="todo-list">
                 {todos.map((todo) => (
                     <div className="todo-item" key={todo.id}>
@@ -90,6 +95,7 @@ export const App = () => {
                     </div>
                 ))}
             </div>
+            {/* <TodoList /> */}
 
             {/* <Button text="Добавить" colorVariant="success" | "danger" | "warning" onClick={() => console.log('Click')} /> */}
         </div>

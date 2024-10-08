@@ -1,5 +1,6 @@
 import './a.css';
+import css from './a.module.css';
 
 export const A = () => {
-    return <p className="title">Component A</p>;
+    return <p className={css.box}>Component A</p>;
 };
