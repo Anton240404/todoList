@@ -22,6 +22,9 @@ h1 {
     border: 1px solid #000;
     /* Свойство overflow (переполнение) - указывает, что делать с тем контентом, который переполнил элементы */
     overflow: auto;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .todo-item {
@@ -47,10 +50,11 @@ h1 {
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-}
+    transition-duration: 0.2s;
 
-.delete-btn:hover {
-    background-color: #ff1a1a;
+    &:hover {
+        background-color: #ff1a1a;
+    }
 }
 
 .todo-input {

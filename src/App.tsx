@@ -28,7 +28,18 @@ export const App = () => {
             text: 'Другое дело',
             description: 'Описание другого дела',
         },
+        {
+            id: uuid(),
+            text: 'Другое дело 2',
+            description: 'Описание другого дела',
+        },
+        {
+            id: uuid(),
+            text: 'Другое дело 2',
+            description: 'Описание другого дела',
+        },
     ]);
+    const [gap, setGap] = useState(20);
 
     const addTodo = () => {
         if (text.trim() !== '' && description.trim() !== '') {
@@ -57,7 +68,14 @@ export const App = () => {
             <h1>Мой список дел</h1>
             <A />
             <B />
+            {/* <InteractiveButtonEdit /> */}
             <div>
+                {/* <Input
+                    placeholder="Название туду"
+                    onChange={(e) => setText(e.target.value)}
+                    value={text}
+                    onKeyDown={handleKeyPress}
+                /> */}
                 <input
                     className="todo-input"
                     type="text"
@@ -66,6 +84,11 @@ export const App = () => {
                     value={text}
                     onKeyDown={handleKeyPress}
                 />
+                {/* <Textarea
+                    placeholder="Описание туду"
+                    onChange={(e) => setDescription(e.target.value)}
+                    value={description}
+                /> */}
                 <textarea
                     className="todo-textarea"
                     placeholder="Описание туду"
@@ -79,7 +102,16 @@ export const App = () => {
                     disabled={text.trim() === '' || description.trim() === ''}
                 />
             </div>
-            <TodoList deleteTodo={deleteTodo} todos={todos} />
+            <p>gap = {gap}</p>
+            <input
+                min={0}
+                max={200}
+                type="range"
+                onChange={(ev) => {
+                    setGap(Number(ev.target.value)); // "134"
+                }}
+            />
+            <TodoList deleteTodo={deleteTodo} todos={todos} gap={gap} />
             <Button
                 text={'Добавить'}
                 colorVariant="success"
@@ -88,3 +120,25 @@ export const App = () => {
         </div>
     );
 };
+
+function doOperation(
+    a: number,
+    b: number,
+    getResult: (a: number, b: number) => number,
+    print: (value: number) => void
+) {
+    const _3 = getResult(a, b);
+    print(_3);
+}
+
+const sum = (a: number, b: number): number => {
+    return a + b;
+};
+
+doOperation(
+    1,
+    2,
+    (a, b) => sum(a, b),
+    (value) => console.log(value)
+);
+doOperation(1, 2, sum, console.log);
