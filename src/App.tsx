@@ -6,8 +6,9 @@ import { A } from './components/a';
 import { B } from './components/b';
 import { Button } from './components/button/button';
 import { AddButton } from './components/add-button/add-button';
+import { TodoList } from './components/todo-list/todo-list.tsx';
 
-type Todo = {
+export type Todo = {
     id: string;
     text: string;
     description: string;
@@ -56,7 +57,6 @@ export const App = () => {
             <h1>Мой список дел</h1>
             <A />
             <B />
-            <Button />
             <div>
                 <input
                     className="todo-input"
@@ -74,30 +74,17 @@ export const App = () => {
                 />
 
                 <AddButton
-                    color="green"
+                    color=""
                     addTodo={() => addTodo()}
                     disabled={text.trim() === '' || description.trim() === ''}
                 />
             </div>
-
-            {/* <TodoList /> */}
-            <div className="todo-list">
-                {todos.map((todo) => (
-                    <div className="todo-item" key={todo.id}>
-                        <h1 className="todo-title">{todo.text}</h1>
-                        <p className="todo-text">{todo.description}</p>
-                        <button
-                            className="delete-btn"
-                            onClick={() => deleteTodo(todo.id)}
-                        >
-                            Удалить
-                        </button>
-                    </div>
-                ))}
-            </div>
-            {/* <TodoList /> */}
-
-            {/* <Button text="Добавить" colorVariant="success" | "danger" | "warning" onClick={() => console.log('Click')} /> */}
+            <TodoList deleteTodo={deleteTodo} todos={todos} />
+            <Button
+                text={'Добавить'}
+                colorVariant="success"
+                onClick={() => console.log('Click')}
+            />
         </div>
     );
 };

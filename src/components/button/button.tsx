@@ -1,5 +1,16 @@
 import css from './button.module.css';
 
-export function Button() {
-    return <button className={css.button}>Click me</button>;
+type Props = {
+    text: string;
+    colorVariant: 'success' | 'danger' | 'warning';
+    onClick?: () => void;
+};
+
+export function Button(props: Props) {
+    const buttonClass = `${css.button} ${css[props.colorVariant]}`;
+    return (
+        <button className={buttonClass} onClick={props.onClick}>
+            {props.text}
+        </button>
+    );
 }

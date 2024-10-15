@@ -1,5 +1,3 @@
-import css from './add-button.module.css';
-
 type Props = {
     disabled: boolean;
     addTodo: () => void;
