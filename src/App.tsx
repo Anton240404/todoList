@@ -7,6 +7,9 @@ import { B } from './components/b';
 import { Button } from './components/button/button';
 import { AddButton } from './components/add-button/add-button';
 import { TodoList } from './components/todo-list/todo-list.tsx';
+import { InteractiveButtonEdit } from './components/interactive-button/Interactive-button-edit.tsx';
+import { Input } from './components/todo-list/input/input.tsx';
+import { Textarea } from './components/todo-list/texterea/textarea.tsx';
 
 export type Todo = {
     id: string;
@@ -68,34 +71,19 @@ export const App = () => {
             <h1>Мой список дел</h1>
             <A />
             <B />
-            {/* <InteractiveButtonEdit /> */}
+            <InteractiveButtonEdit />
             <div>
-                {/* <Input
-                    placeholder="Название туду"
-                    onChange={(e) => setText(e.target.value)}
-                    value={text}
-                    onKeyDown={handleKeyPress}
-                /> */}
-                <input
-                    className="todo-input"
-                    type="text"
+                <Input
                     placeholder="Название туду"
                     onChange={(e) => setText(e.target.value)}
                     value={text}
                     onKeyDown={handleKeyPress}
                 />
-                {/* <Textarea
-                    placeholder="Описание туду"
-                    onChange={(e) => setDescription(e.target.value)}
-                    value={description}
-                /> */}
-                <textarea
-                    className="todo-textarea"
+                <Textarea
                     placeholder="Описание туду"
                     onChange={(e) => setDescription(e.target.value)}
                     value={description}
                 />
-
                 <AddButton
                     color=""
                     addTodo={() => addTodo()}
