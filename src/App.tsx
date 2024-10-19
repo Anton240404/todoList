@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import { uuid } from './components/utils/uuid';
 import './components/css/reset.css';
 import './components/css/todo.css';
-import { A } from './components/a';
-import { B } from './components/b';
 import { Button } from './components/button/button';
 import { AddButton } from './components/add-button/add-button';
 import { TodoList } from './components/todo-list/todo-list.tsx';
-import { InteractiveButtonEdit } from './components/interactive-button/Interactive-button-edit.tsx';
+import { InteractiveButtonEdit } from './components/interactive-button/interactive-button-edit.tsx';
 import { Input } from './components/todo-list/input/input.tsx';
 import { Textarea } from './components/todo-list/texterea/textarea.tsx';
 
@@ -69,8 +67,6 @@ export const App = () => {
     return (
         <div className="todo-app">
             <h1>Мой список дел</h1>
-            <A />
-            <B />
             <InteractiveButtonEdit />
             <div>
                 <Input
@@ -85,7 +81,6 @@ export const App = () => {
                     value={description}
                 />
                 <AddButton
-                    color=""
                     addTodo={() => addTodo()}
                     disabled={text.trim() === '' || description.trim() === ''}
                 />
