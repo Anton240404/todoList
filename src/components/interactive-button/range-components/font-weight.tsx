@@ -9,7 +9,7 @@ type Props = {
 export function FontWeight({ value, onChange }: Props) {
     return (
         <div className={css.column}>
-            <label>Жирность</label>
+            <label>Жирность {value}</label>
             <input
                 min={100}
                 max={900}

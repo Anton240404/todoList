@@ -1,10 +1,28 @@
+.root {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.side {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:not(:last-child) {
+        border-right: 1px solid #000;
+    }
+}
+
 .column {
     display: flex;
     flex-direction: column;
     /* gap: 12px; */
 }
 
-.column input[type="text"] {
+.column input[type='text'] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -19,27 +37,25 @@
 }
 
 .playground {
-    border-left: 1px solid #000;
-    width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .blur {
-    border: 1px solid #000;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 10px;
 }
 
-.styleBufer {
-    border-left: 1px solid #000;
-    width: 50%;
+.styleBuffer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
 }
 
-
+.json {
+    margin-bottom: 24px;
+}
