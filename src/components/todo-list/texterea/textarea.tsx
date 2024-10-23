@@ -1,4 +1,5 @@
 import React from 'react';
+import css from './textarea.module.css';
 
 type TextareaProps = {
     placeholder: string;
@@ -8,7 +9,7 @@ type TextareaProps = {
 export const Textarea = ({ placeholder, value, onChange }: TextareaProps) => {
     return (
         <textarea
-            className="todo-textarea"
+            className={css.myTextarea}
             placeholder={placeholder}
             value={value}
             onChange={onChange}

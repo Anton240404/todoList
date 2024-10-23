@@ -4,6 +4,13 @@
     /* gap: 12px; */
 }
 
+.column input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -14,8 +21,25 @@
 .playground {
     border-left: 1px solid #000;
     width: 50%;
-
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
+
+.blur {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.styleBufer {
+    border-left: 1px solid #000;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
