@@ -38,6 +38,10 @@ export function InteractiveButtonEdit() {
         const stylesInString = JSON.stringify(styles, null, 2);
         navigator.clipboard.writeText(stylesInString);
     };
+    /*    const result = myMap([1, 2, 3, 4, 5], (item, index) => {
+            return item + index;
+        });
+        console.log(result);*/
 
     return (
         <div className={css.root}>
@@ -69,6 +73,15 @@ export function InteractiveButtonEdit() {
                             setBlur(values.blur);
                         }}
                     />
+
+                    {/*<Select
+                        value={[
+                            'Times New Roman',
+                            'Arial',
+                            'Calibri',
+                            'Georgia',
+                        ]}
+                    />*/}
                     <select
                         value={selectedFontStyle}
                         onChange={(e) => setSelectedFontStyle(e.target.value)}
@@ -120,7 +133,12 @@ export function InteractiveButtonEdit() {
                             2
                         )}
                     </pre>
-                    <button onClick={handleCopyStyles}>Скопировать</button>
+                    <button
+                        className={css.buttonCopy}
+                        onClick={handleCopyStyles}
+                    >
+                        Скопировать
+                    </button>
                 </div>
             </div>
         </div>
