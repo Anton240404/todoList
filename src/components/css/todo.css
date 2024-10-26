@@ -6,7 +6,8 @@
 }
 
 .todo-app {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
+    font-family: 'Playwrite PT Light', Arial;
     margin-top: 50px;
     width: 1400px;
     margin: 0 auto;

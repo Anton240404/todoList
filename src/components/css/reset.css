@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Playwrite PT Light';
+    src: url(../../assets/fonts/Playwrite.woff2);
+}
+
 * {
     margin: 0px;
     padding: 0px;
