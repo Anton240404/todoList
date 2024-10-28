@@ -14,6 +14,9 @@ export function Select(props: Props) {
 
 const array = [1, 2, 3, 4, 5];
 
+const result = array.find((item) => item === 3);
+console.log(result);
+
 export function myMap(
     array: number[],
     callback: (item: number, index: number) => number
@@ -25,3 +28,13 @@ export function myMap(
     }
     return newArray;
 }
+
+export function myFind(array: number[], callback: (item: number, index: number) => boolean): number | undefined {
+    for (let i = 0; i < array.length; i++) {
+        if (callback(array[i], i)) {
+            return array[i];
+        }
+    }
+    return undefined;
+}
+

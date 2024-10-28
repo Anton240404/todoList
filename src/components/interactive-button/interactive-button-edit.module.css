@@ -73,3 +73,7 @@
 .buttonCopy:hover {
     background-color: #b1d6f8;
 }
+
+.copied {
+    background-color: green;
+}

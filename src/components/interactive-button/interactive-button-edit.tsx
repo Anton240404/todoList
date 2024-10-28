@@ -24,6 +24,7 @@ export function InteractiveButtonEdit() {
     const [selectedFontStyle, setSelectedFontStyle] = useState(
         fontStyles[0].value
     );
+    const [copied, setCopied] = useState(false);
 
     const handleCopyStyles = () => {
         const styles = {
@@ -34,6 +35,8 @@ export function InteractiveButtonEdit() {
             padding: `${paddingVertical}px ${paddingHorizontal}px`,
             'box-shadow': `${xAxis}px ${yAxis}px ${blur}px rgba(0, 0, 0, 0.5)`,
         };
+        setCopied(true);
+        setTimeout(() => setCopied(false), 3000);
 
         const stylesInString = JSON.stringify(styles, null, 2);
         navigator.clipboard.writeText(stylesInString);
@@ -134,10 +137,14 @@ export function InteractiveButtonEdit() {
                         )}
                     </pre>
                     <button
-                        className={css.buttonCopy}
+                        className={
+                            copied
+                                ? `${css.buttonCopy} ${css.copied}`
+                                : css.buttonCopy
+                        }
                         onClick={handleCopyStyles}
                     >
-                        Скопировать
+                        {copied ? 'Скопировано' : 'Скопировать'}
                     </button>
                 </div>
             </div>
