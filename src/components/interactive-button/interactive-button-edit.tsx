@@ -9,6 +9,7 @@ import { Text } from './range-components/text.tsx';
 import { FontWeight } from './range-components/font-weight.tsx';
 import { Blur } from './range-components/blur.tsx';
 import { fontStyles } from '../utils/font-styles.ts';
+import { Select } from './select/select.tsx';
 
 export function InteractiveButtonEdit() {
     const [fontSize, setFontSize] = useState(16);
@@ -77,14 +78,14 @@ export function InteractiveButtonEdit() {
                         }}
                     />
 
-                    {/*<Select
+                    <Select
                         value={[
                             'Times New Roman',
                             'Arial',
                             'Calibri',
                             'Georgia',
                         ]}
-                    />*/}
+                    />
                     <select
                         value={selectedFontStyle}
                         onChange={(e) => setSelectedFontStyle(e.target.value)}

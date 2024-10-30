@@ -3,38 +3,80 @@ type Props = {
 };
 
 export function Select(props: Props) {
+    const arr = [<p>Text 1</p>, <p>Text 2</p>, <p>Text 3</p>];
+
+    const fn = (item) => {
+        return item.length > 3;
+    };
+
     return (
         <div>
-            {props.value.map((item) => {
-                return <div>{item}</div>;
-            })}
+            {props.value
+                .filter(fn)
+                .map(fn)
+                .join('')
+                .toLowerCase()
+                .split()
+                .filter(fn)
+                .forEach(fn)}
+
+            <div>{arr}</div>
         </div>
     );
 }
 
-const array = [1, 2, 3, 4, 5];
-
-const result = array.find((item) => item === 3);
-console.log(result);
-
-export function myMap(
-    array: number[],
-    callback: (item: number, index: number) => number
-) {
-    const newArray = [];
-    for (let i = 0; i < array.length; i++) {
-        const result = callback(array[i], i);
-        newArray.push(result);
+function myForeach(
+    arr: number[],
+    cb: (item: number, index: number) => void
+): void {
+    for (let i = 0; i < arr.length; i++) {
+        cb(arr[i], i);
     }
-    return newArray;
 }
 
-export function myFind(array: number[], callback: (item: number, index: number) => boolean): number | undefined {
-    for (let i = 0; i < array.length; i++) {
-        if (callback(array[i], i)) {
-            return array[i];
-        }
+function myMap(
+    arr: number[],
+    cb: (item: number, index: number) => number
+): number[] {
+    const result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        const x = cb(arr[i], i);
+        result.push(x);
     }
-    return undefined;
+
+    return result;
 }
 
+[1, 2, 3].forEach((x, i) => {
+    console.log(x, i);
+});
+
+myForeach([1, 2, 3], (x, i) => {
+    console.log(x, i);
+});
+
+type User = { name: string; age: number };
+
+const users: User[] = [
+    { name: 'Ivan', age: 20 },
+    { name: 'Petr', age: 30 },
+    { name: 'Sergey', age: 20 },
+    { name: 'Vasya', age: 30 },
+    { name: 'Masha', age: 20 },
+    { name: 'Dasha', age: 40 },
+];
+
+const groupedByAge = {};
+const result = {
+    20: [
+        { name: 'Ivan', age: 20 },
+        { name: 'Sergey', age: 20 },
+        { name: 'Masha', age: 20 },
+    ],
+    30: [
+        { name: 'Petr', age: 30 },
+        { name: 'Vasya', age: 30 },
+    ],
+    40: [{ name: 'Dasha', age: 40 }],
+};
