@@ -8,6 +8,8 @@ import { TodoList } from './components/todo-list/todo-list.tsx';
 import { InteractiveButtonEdit } from './components/interactive-button/interactive-button-edit.tsx';
 import { Input } from './components/todo-list/input/input.tsx';
 import { Textarea } from './components/todo-list/texterea/textarea.tsx';
+import { Position } from './components/position/position.tsx';
+import { PositionNew } from './components/position/position.new.tsx';
 
 export type Todo = {
     id: string;
@@ -16,6 +18,10 @@ export type Todo = {
 };
 
 export const App = () => {
+    return <PositionNew />;
+};
+
+export const App2 = () => {
     const [text, setText] = useState('');
     const [description, setDescription] = useState('');
     const [todos, setTodos] = useState<Todo[]>([
@@ -103,25 +109,3 @@ export const App = () => {
         </div>
     );
 };
-
-function doOperation(
-    a: number,
-    b: number,
-    getResult: (a: number, b: number) => number,
-    print: (value: number) => void
-) {
-    const _3 = getResult(a, b);
-    print(_3);
-}
-
-const sum = (a: number, b: number): number => {
-    return a + b;
-};
-
-doOperation(
-    1,
-    2,
-    (a, b) => sum(a, b),
-    (value) => console.log(value)
-);
-doOperation(1, 2, sum, console.log);

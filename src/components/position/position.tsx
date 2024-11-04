@@ -1,13 +1,13 @@
 import './style.css';
 import { useState } from 'react';
 
+type Position = 'relative' | 'absolute';
+
+interface Positions {
+    [key: string]: Position;
+}
+
 export function Position() {
-    type Position = 'relative' | 'absolute';
-
-    interface Positions {
-        [key: string]: Position;
-    }
-
     const initialPositions: Positions = {
         box1: 'relative',
         box2: 'relative',
@@ -28,6 +28,7 @@ export function Position() {
         box17: 'relative',
         box18: 'relative',
     };
+
     const getBoxStyle = (boxName: keyof Positions) => ({
         position: positions[boxName],
         backgroundColor: positions[boxName] === 'absolute' ? 'blue' : 'initial',
@@ -143,8 +144,13 @@ export function Position() {
                                 <div
                                     className="box17"
                                     style={{ ...getBoxStyle('box17') }}
-                                    onClick={() => handleClick('box17')}
-                                ></div>
+                                    onClick={(ev) => {
+                                        ev.stopPropagation();
+                                        handleClick('box17');
+                                    }}
+                                >
+                                    box17
+                                </div>
                             </div>
                             <div className="boxInBox3">
                                 <div
