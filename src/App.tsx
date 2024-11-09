@@ -10,6 +10,7 @@ import { Input } from './components/todo-list/input/input.tsx';
 import { Textarea } from './components/todo-list/texterea/textarea.tsx';
 import { Position } from './components/position/position.tsx';
 import { PositionNew } from './components/position/position.new.tsx';
+import { Project } from './components/project/project.tsx';
 
 export type Todo = {
     id: string;
@@ -18,6 +19,10 @@ export type Todo = {
 };
 
 export const App = () => {
+    return <Project />;
+};
+
+export const App1 = () => {
     return <PositionNew />;
 };
 

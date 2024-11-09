@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            outline: 1px solid orange;
+        }
+
+        .flex-container {
+            display: flex;
+
+            background-color: sienna;
+            padding: 4px;
+            /* height: 200px; */
+            flex-direction: column; /* (row) */
+
+            /* gap: 20px; */
+
+            /* Выравнивает вдоль ОО (ОЧ ВАЖНО) при наличии свободного места (flex-start)  */
+            /* justify-content: space-between; */
+
+            /* Выравнивает вдоль ПО (ОЧ ВАЖНО) при наличии свободного места (stretch)  */
+            /* stretch - растягивать */
+            align-items: stretch;
+        }
+
+        /* Основная ось ОО - flex-direction. Элементы ВСЕГДА выстраиваются вдоль ОО */
+        /* Поперечная ось ПО - всегда перпендикулярна основной */
+
+        .flex-element:nth-child(2) {
+            background-color: slateblue;
+
+            /* grow - расти 0 или 1, занимать свободное пространство */
+            /* flex-grow: 1; */
+            /* flex: 1; */
+
+            /* Размер вдоль ОС */
+            /* flex-basis: 600px; */
+
+            /* shrink - сокращаться 0 или 1  */
+            /* flex-shrink: 0; */
+
+            /* flex: grow shrink basis; */
+            /* flex: 1 0 600px; */
+        }
+
+        a {
+            background-color: slateblue;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <body>
+        <!-- Ведет себя как блочный -->
+        <div class="flex-container">
+            <div class="flex-element">1</div>
+            <div class="flex-element">2</div>
+            <div class="flex-element">3</div>
+            <div class="flex-element">4</div>
+            <div class="flex-element">5</div>
+            <a href="#">6</a>
+        </div>
+        <a href="#">link</a>
+    </body>
+</html>
