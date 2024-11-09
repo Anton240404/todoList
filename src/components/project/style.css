@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 450px;
+    height: 1088px;
+    border: 1px solid black;
+    padding: 24px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.text {
+    padding-top: 6px;
+    padding-left: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.leslie {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #000000;
+}
+
+.Johnson {
+    padding-top: 2px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.025em;
+    color: #6C757D;
+}
+
+.information {
+    margin-top: 15px;
+}
+
+.foto1 {
+    padding-right: 2px;
+}
+
+.bodyText {
+    margin-top: 20px;
+}
+
+.WebText {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 44px;
+}
+
+.textInfo {
+    padding-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+}
+
+.vector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.number34 {
+    padding-left: 7px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+}
+
+.heart {
+    width: 18px;
+    height: 16px;
+}
+
+.comment-box {
+    width: 403px;
+    height: 42px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    box-shadow: inset 0 0 2px -1px rgba(0, 0, 0, 0.47);
+    border: 1px #6C757D;
+    padding-top: 6px;
+    padding-left: 10px;
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+}
+
+.avatar2 {
+    margin-top: 10px;
+}
+
+.footer-commend {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Name-minute {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.mitchell {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #000;
+}
+
+.heart2 {
+    width: 18px;
+    height: 16px;
+}
+
+.minutes {
+    padding-top: 2px;
+    padding-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.025em;
+    color: #6C757D;
+}
+
+.commend1 {
+    padding-left: 50px;
+}
+
+.heart-reply {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 49px;
+    padding-top: 10px;
+}
+
+.reply {
+    padding-left: 7px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.025em;
+    color: #6C757D;
+}
+
+.footer-commend2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.Name-minute2 {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+}
+
+.Robert-Fox {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #000;
+}
+
+.minutes2 {
+    padding-top: 2px;
+    padding-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.025em;
+    color: #6C757D;
+}
+
+.foto-commend {
+    margin-left: 50px;
+    padding-bottom: 10px;
+}
+
+.heart-reply2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 48px;
+}
+
+.footer-write {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 45px;
+}
+
+.avatar4 {
+    padding-right: 10px;
+}
+
+.comment-box1 {
+    width: 100%;
+    height: 44px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    box-shadow: inset 0 0 2px -1px rgba(0, 0, 0, 0.47);
+    border: 1px #6C757D;
+    padding-top: 6px;
+    padding-left: 10px;
+    border-radius: 8px;
+    resize: none;
+}
