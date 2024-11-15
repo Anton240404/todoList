@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px solid black;
+    /*outline: 1px solid black;*/
 }
 
 .container {
@@ -12,11 +12,17 @@
     height: 1088px;
     border: 1px solid black;
     padding: 24px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .header {
     display: flex;
     flex-direction: row;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
 }
 
 .text {
@@ -25,10 +31,9 @@
     justify-content: center;
     margin-top: 6px;
     margin-left: 15px;
-    font-family: 'Roboto', sans-serif;
 }
 
-.leslie {
+.author-header {
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
@@ -36,7 +41,7 @@
     color: #000000;
 }
 
-.johnson {
+.company {
     margin-top: 2px;
     font-weight: 400;
     font-size: 14px;
@@ -48,9 +53,13 @@
 .information {
     display: flex;
     align-items: center;
-    border-radius: 4px;
     gap: 2px;
     margin-top: 5px;
+}
+
+.information img {
+    border-radius: 8px;
+    width: 50%;
 }
 
 .body-text {
@@ -58,7 +67,6 @@
 }
 
 .web-text {
-    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 34px;
     line-height: 44px;
@@ -67,7 +75,6 @@
 
 .text-info {
     margin-top: 10px;
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 23px;
     line-height: 28px;
@@ -78,30 +85,28 @@
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    gap: 7px;
 }
 
-.number34 {
-    padding-left: 7px;
-    font-family: 'Roboto', sans-serif;
+.number {
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 0.05em;
 }
 
 .comment-box {
-    width: 403px;
-    height: 42px;
-    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 44px;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: 0.05em;
     box-shadow: inset 0 0 2px -1px rgba(0, 0, 0, 0.47);
     border: 1px #6c757d;
+    background-color: #f0f0f0;
+    padding-top: 10px;
+    padding-left: 10px;
     border-radius: 8px;
-    outline: none;
-    resize: none;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .footer-comment {
@@ -111,14 +116,21 @@
     flex-wrap: wrap;
 }
 
+.container-small {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 .name-time {
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-left: 10px;
+    gap: 5px;
 }
 
-.mitchell {
-    font-family: 'Roboto', sans-serif;
+.author-body {
     font-weight: bold;
     font-size: 16px;
     line-height: 24px;
@@ -126,15 +138,7 @@
     color: #000;
 }
 
-.heart2 {
-    width: 18px;
-    height: 16px;
-}
-
 .times {
-    padding-top: 2px;
-    padding-left: 5px;
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
@@ -142,37 +146,42 @@
     color: #6c757d;
 }
 
+.heart2 {
+    width: 18px;
+    height: 16px;
+}
+
 .text1 {
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 3px;
 }
 
 .action {
     display: flex;
+
 }
 
 .like-action {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 49px;
-    margin-top: 10px;
+    gap: 8px;
+    margin-left: 10px;
+    margin-top: 17px;
 }
 
 .reply {
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.025em;
     color: #6c757d;
-    margin-left: 10px;
-    margin-top: 9px;
+
 }
 
 .footer-comment2 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     margin-top: 20px;
 }
@@ -186,11 +195,12 @@
 .name-times2 {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 5px;
     margin-left: 10px;
 }
 
-.robert-Fox {
-    font-family: 'Roboto', sans-serif;
+.author-body2 {
     font-weight: bold;
     font-size: 16px;
     line-height: 24px;
@@ -199,9 +209,6 @@
 }
 
 .times2 {
-    padding-top: 2px;
-    padding-left: 5px;
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
@@ -210,14 +217,19 @@
 }
 
 .photo-comment {
+    display: flex;
+    flex-direction: column;
     margin-left: 10px;
 }
 
 .footer-write {
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
-    margin-left: 45px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+    padding-left: 56px;
 }
 
 .avatar4 {
@@ -229,23 +241,17 @@
 .comment-box1 {
     width: 100%;
     height: 44px;
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: 0.05em;
     box-shadow: inset 0 0 2px -1px rgba(0, 0, 0, 0.47);
     border: 1px #6c757d;
+    background-color: #f0f0f0;
     padding-top: 10px;
     padding-left: 10px;
     border-radius: 8px;
-    resize: none;
 }
 
-.container-small {
-    display: flex;
-    flex-direction: column;
-}
 
 .box1 {
     display: flex;
@@ -258,14 +264,16 @@
 .avatar2 {
     margin-right: 10px;
     height: 40px;
-    width: 40px;
+    width: 45px;
 }
 
 .avatar-comment {
+    margin-right: 10px;
     height: 40px;
-    width: 40px;
+    width: 100px;
 }
 
 .card-image {
     padding-top: 10px;
+
 }

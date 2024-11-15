@@ -13,10 +13,6 @@
     margin: 0 auto;
 }
 
-h1 {
-    color: #333;
-}
-
 .todo-list {
     margin-top: 24px;
     height: 600px;
