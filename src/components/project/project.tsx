@@ -74,7 +74,7 @@ export function Project() {
                             alt={avatar}
                         />
                     </div>
-                    <div className="container-small2">
+                    <div className="container-small">
                         <div className="name-times2">
                             <p className="author-body2">Robert Fox</p>
                             <p className="times2">3 minutes ago</p>

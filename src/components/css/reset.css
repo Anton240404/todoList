@@ -31,3 +31,7 @@ textarea {
     outline: none;
     resize: none;
 }
+
+textarea {
+    font-family: inherit;
+}
