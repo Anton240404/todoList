@@ -19,8 +19,8 @@ export function Project() {
                 </div>
             </div>
             <div className="information">
-                <img src={photo4k} />
-                <img src={photo4k2} />
+                <img src={photo4k} alt={photo4k} />
+                <img src={photo4k2} alt={photo4k2} />
             </div>
             <div className="body-text">
                 <h1 className="web-text">Web Design templates Selection</h1>
@@ -37,7 +37,7 @@ export function Project() {
             <textarea
                 className="comment-box"
                 placeholder="Write a comment"
-                rows={4}
+                rows={1}
             ></textarea>
 
             <div className="footer-comment">
@@ -105,7 +105,7 @@ export function Project() {
                 <textarea
                     className="comment-box1"
                     placeholder="Write a comment"
-                    rows={4}
+                    rows={1}
                 ></textarea>
             </div>
         </div>

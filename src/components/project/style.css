@@ -22,6 +22,7 @@
 .avatar {
     width: 60px;
     height: 60px;
+    border-radius: 30px;
 }
 
 .text {
@@ -57,7 +58,7 @@
 
 .information img {
     border-radius: 8px;
-    width: 50%;
+    width: 49.7%;
 }
 
 .body-text {
@@ -100,8 +101,7 @@
     box-shadow: inset 0 0 2px -1px rgba(0, 0, 0, 0.47);
     border: 1px #6c757d;
     background-color: #f0f0f0;
-    padding-top: 10px;
-    padding-left: 10px;
+    padding: 10px;
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -183,7 +183,6 @@
 }
 
 
-
 .name-times2 {
     display: flex;
     flex-direction: row;
@@ -226,13 +225,13 @@
 
 .avatar4 {
     margin-right: 10px;
+    border-radius: 30px;
     height: 40px;
     width: 40px;
 }
 
 .comment-box1 {
     width: 100%;
-    height: 44px;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -256,15 +255,13 @@
     margin-right: 10px;
     height: 40px;
     width: 45px;
+    border-radius: 30px;
 }
 
 .avatar-comment {
     margin-right: 10px;
+    border-radius: 30px;
     height: 40px;
     width: 100px;
 }
 
-.card-image {
-    padding-top: 10px;
-
-}
