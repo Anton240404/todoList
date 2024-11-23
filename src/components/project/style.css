@@ -154,6 +154,7 @@
 }
 
 .text {
+    /* Todo */
     margin-top: 3px;
 }
 
@@ -185,7 +186,6 @@
     line-height: 20px;
     letter-spacing: 0.025em;
     color: #6c757d;
-
 }
 
 .footer-write {
@@ -216,5 +216,3 @@
     padding: 10px;
     border-radius: 8px;
 }
-
-

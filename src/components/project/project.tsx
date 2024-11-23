@@ -18,7 +18,6 @@ type Comment = {
     attachmentUrl?: string;
     likes: number;
     id: string;
-    reply: string;
 };
 
 const comment1 = {
@@ -30,7 +29,6 @@ const comment1 = {
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.',
     createdTime: new Date(),
     likes: 18,
-    reply: 'reply',
 };
 const comment2 = {
     id: '2',
@@ -42,7 +40,6 @@ const comment2 = {
     attachmentUrl: cardImage,
     createdTime: new Date(),
     likes: 2,
-    reply: 'reply',
 };
 
 const comments: Comment[] = [comment1, comment2];
@@ -51,6 +48,7 @@ export function Project() {
     return (
         <div className="container">
             <div className="header">
+                {/* Todo отступ */}
                 <img className="avatar" src={avatar} alt="avatar" />
                 <div className="text">
                     <h1 className="author-header">Leslie Alexander</h1>
@@ -80,6 +78,7 @@ export function Project() {
             ></textarea>
             {comments.map((comment) => (
                 <div key={comment.id} className="footer-comment">
+                    {/* Todo */}
                     <div className="boxProject">
                         <div>
                             <img
@@ -111,7 +110,7 @@ export function Project() {
                             <div className="like-action">
                                 <img className="heart" src={vector} />
                                 <p className="number">{comment.likes}</p>
-                                <p className="reply">{comment.reply}</p>
+                                <p className="reply">Reply</p>
                             </div>
                         </div>
                     </div>
