@@ -20,8 +20,8 @@
 }
 
 .avatar {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 30px;
 }
 
@@ -29,7 +29,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 15px;
 }
 
 .author-header {
@@ -56,7 +55,7 @@
     margin-top: 5px;
 }
 
-.information img {
+.photo-header {
     border-radius: 8px;
     width: 49.7%;
 }
@@ -111,18 +110,25 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.boxProject {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
 }
 
 .container-small {
     display: flex;
     flex-direction: column;
+    gap: 3px;
 }
 
 .name-time {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 10px;
     gap: 5px;
 }
 
@@ -142,19 +148,22 @@
     color: #6c757d;
 }
 
-.heart2 {
-    width: 18px;
-    height: 16px;
+.photo-comment {
+    display: flex;
+    flex-direction: column;
 }
 
-.text1 {
-    margin-left: 10px;
+.text {
     margin-top: 3px;
 }
 
-.action {
+.card {
     display: flex;
+    align-items: center;
+}
 
+.card-image {
+    width: 100%;
 }
 
 .like-action {
@@ -162,8 +171,12 @@
     flex-direction: row;
     align-items: center;
     gap: 8px;
-    margin-left: 10px;
     margin-top: 17px;
+}
+
+.heart {
+    width: 18px;
+    height: 16px;
 }
 
 .reply {
@@ -173,44 +186,6 @@
     letter-spacing: 0.025em;
     color: #6c757d;
 
-}
-
-.footer-comment2 {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-
-.name-times2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
-    margin-left: 10px;
-}
-
-.author-body2 {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.05em;
-    color: #000;
-}
-
-.times2 {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.025em;
-    color: #6c757d;
-}
-
-.photo-comment {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
 }
 
 .footer-write {
@@ -242,26 +217,4 @@
     border-radius: 8px;
 }
 
-
-.box1 {
-    display: flex;
-}
-
-.box2 {
-    display: flex;
-}
-
-.avatar2 {
-    margin-right: 10px;
-    height: 40px;
-    width: 45px;
-    border-radius: 30px;
-}
-
-.avatar-comment {
-    margin-right: 10px;
-    border-radius: 30px;
-    height: 40px;
-    width: 100px;
-}
 

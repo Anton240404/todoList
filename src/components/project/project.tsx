@@ -8,6 +8,45 @@ import avatar3 from './assets/avatar3.jpg';
 import cardImage from './assets/card-image.png';
 import avatar4 from './assets/avatar4.png';
 
+type Comment = {
+    author: {
+        avatarUrl: string;
+        name: string;
+    };
+    createdTime: Date;
+    text: string;
+    attachmentUrl?: string;
+    likes: number;
+    id: string;
+    reply: string;
+};
+
+const comment1 = {
+    id: '1',
+    author: {
+        avatarUrl: avatar2,
+        name: 'Mitchell',
+    },
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.',
+    createdTime: new Date(),
+    likes: 18,
+    reply: 'reply',
+};
+const comment2 = {
+    id: '2',
+    author: {
+        avatarUrl: avatar3,
+        name: 'Robert Fox',
+    },
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.',
+    attachmentUrl: cardImage,
+    createdTime: new Date(),
+    likes: 2,
+    reply: 'reply',
+};
+
+const comments: Comment[] = [comment1, comment2];
+
 export function Project() {
     return (
         <div className="container">
@@ -19,8 +58,8 @@ export function Project() {
                 </div>
             </div>
             <div className="information">
-                <img src={photo4k} alt={photo4k} />
-                <img src={photo4k2} alt={photo4k2} />
+                <img className="photo-header" src={photo4k} alt={photo4k} />
+                <img className="photo-header" src={photo4k2} alt={photo4k2} />
             </div>
             <div className="body-text">
                 <h1 className="web-text">Web Design templates Selection</h1>
@@ -39,67 +78,46 @@ export function Project() {
                 placeholder="Write a comment"
                 rows={1}
             ></textarea>
-
-            <div className="footer-comment">
-                <div className="box1">
-                    <div>
-                        <img className="avatar2" src={avatar2} alt={avatar} />
-                    </div>
-                    <div className="container-small">
-                        <div className="name-time">
-                            <div className="author-body">Mitchell</div>
-                            <div className="times">25 minutes ago</div>
-                        </div>
-                        <p className="text1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit sed do eiusmod.
-                        </p>
-                        <div className="action">
-                            <div className="like-action">
-                                <img className="heart" src={vector} />
-                                <p className="number">18</p>
-                                <p className="reply">Reply</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="footer-comment2">
-                <div className="box2">
-                    <div>
-                        <img
-                            className="avatar-comment"
-                            src={avatar3}
-                            alt={avatar}
-                        />
-                    </div>
-                    <div className="container-small">
-                        <div className="name-times2">
-                            <p className="author-body2">Robert Fox</p>
-                            <p className="times2">3 minutes ago</p>
-                        </div>
-                        <div className="photo-comment">
-                            <p>
-                                Dolor sit ameteiusmod consectetur <br />
-                                adipiscing elit.
-                            </p>
+            {comments.map((comment) => (
+                <div key={comment.id} className="footer-comment">
+                    <div className="boxProject">
+                        <div>
                             <img
-                                className="card-image"
-                                src={cardImage}
-                                alt={cardImage}
+                                className="avatar"
+                                src={comment.author.avatarUrl}
+                                alt={comment.author.name}
                             />
-                            <div className="action">
-                                <div className="like-action">
-                                    <img src={vector} alt="Vector" />
-                                    <p className="number">2</p>
-                                    <p className="reply">Reply</p>
+                        </div>
+                        <div className="container-small">
+                            <div className="name-time">
+                                <div className="author-body">
+                                    {comment.author.name}
+                                </div>
+                                <div className="times">
+                                    {comment.createdTime
+                                        ? comment.createdTime.toLocaleString()
+                                        : 'Unknown'}
                                 </div>
                             </div>
+
+                            <p className="text">{comment.text}</p>
+                            {comment.attachmentUrl && (
+                                <img
+                                    className="card-image"
+                                    src={comment.attachmentUrl}
+                                    alt=""
+                                />
+                            )}
+                            <div className="like-action">
+                                <img className="heart" src={vector} />
+                                <p className="number">{comment.likes}</p>
+                                <p className="reply">{comment.reply}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            ))}
+
             <div className="footer-write">
                 <img className="avatar4" src={avatar4} alt={avatar4} />
                 <textarea
