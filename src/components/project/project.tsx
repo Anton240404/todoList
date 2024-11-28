@@ -67,23 +67,24 @@ export function Project() {
             alert('Введите правильное значение!');
         }
     };
+
     const deleteComment = (id: string) => {
+        // Todo: отрефакторить
         setComments((prevComments) =>
             prevComments.filter((comment) => comment.id !== id)
         );
     };
 
     const toggleLike = (id: string) => {
-        if (!likedComments.includes(id)) {
-            setComments((prevComments) =>
-                prevComments.map((comment) =>
-                    comment.id === id
-                        ? { ...comment, likes: comment.likes + 1 }
-                        : comment
-                )
-            );
-            setLikedComments((prev) => [...prev, id]);
-        }
+        if (likedComments.includes(id)) return;
+
+        const copy = [...comments];
+        const searchElement = copy.find((comment) => comment.id === id);
+        if (!searchElement) return;
+
+        searchElement.likes += 1;
+        setComments(copy);
+        setLikedComments([...likedComments, id]);
     };
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -103,16 +104,8 @@ export function Project() {
                 </div>
             </div>
             <div className={style.information}>
-                <img
-                    className={style.photoHeader}
-                    src={photo4k}
-                    alt={photo4k}
-                />
-                <img
-                    className={style.photoHeader}
-                    src={photo4k2}
-                    alt={photo4k2}
-                />
+                <img className={style.photoHeader} src={photo4k} />
+                <img className={style.photoHeader} src={photo4k2} />
             </div>
             <div className={style.bodyText}>
                 <h1 className={style.webText}>
@@ -128,10 +121,7 @@ export function Project() {
                 <img className={style.heart} src={vector} alt="Vector" />
                 <p className={style.number}>34</p>
             </div>
-            <input
-                className={style.commentBox}
-                placeholder="Write a comment"
-            ></input>
+            <input className={style.commentBox} placeholder="Write a comment" />
             {comments.map((comment) => (
                 <div key={comment.id} className={style.footerComment}>
                     {/* Todo */}
