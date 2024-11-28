@@ -53,7 +53,7 @@ export const App2 = () => {
     ]);
     const [gap, setGap] = useState(20);
 
-    const addTodo = () => {
+    /*const addTodo = () => {
         if (text.trim() !== '' && description.trim() !== '') {
             setTodos([...todos, { id: uuid(), text, description }]);
             setText('');
@@ -73,7 +73,7 @@ export const App2 = () => {
             e.preventDefault();
             addTodo();
         }
-    };
+    };*/
 
     return (
         <div className="todo-app">

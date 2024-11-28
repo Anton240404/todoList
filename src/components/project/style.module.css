@@ -29,9 +29,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all;
 }
 
-.author-header {
+.authorHeader {
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
@@ -55,23 +58,23 @@
     margin-top: 5px;
 }
 
-.photo-header {
+.photoHeader {
     border-radius: 8px;
     width: 49.7%;
 }
 
-.body-text {
+.bodyText {
     margin-top: 20px;
 }
 
-.web-text {
+.webText {
     font-weight: 700;
     font-size: 34px;
     line-height: 44px;
     -webkit-text-stroke: 1px black;
 }
 
-.text-info {
+.textInfo {
     margin-top: 10px;
     font-weight: 400;
     font-size: 23px;
@@ -92,7 +95,7 @@
     letter-spacing: 0.05em;
 }
 
-.comment-box {
+.commentBox {
     width: 100%;
     font-weight: 400;
     font-size: 16px;
@@ -105,7 +108,7 @@
     margin-bottom: 10px;
 }
 
-.footer-comment {
+.footerComment {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -119,20 +122,20 @@
     gap: 5px;
 }
 
-.container-small {
+.containerSmall {
     display: flex;
     flex-direction: column;
     gap: 3px;
 }
 
-.name-time {
+.nameTime {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5px;
 }
 
-.author-body {
+.authorBody {
     font-weight: bold;
     font-size: 16px;
     line-height: 24px;
@@ -163,11 +166,11 @@
     align-items: center;
 }
 
-.card-image {
+.cardImage {
     width: 100%;
 }
 
-.like-action {
+.likeAction {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -180,7 +183,7 @@
     height: 16px;
 }
 
-.reply {
+.liked {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
@@ -188,7 +191,7 @@
     color: #6c757d;
 }
 
-.footer-write {
+.footerWrite {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -205,7 +208,7 @@
     width: 40px;
 }
 
-.comment-box1 {
+.commentBox1 {
     width: 100%;
     font-weight: 400;
     font-size: 16px;
@@ -215,4 +218,10 @@
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 8px;
+}
+
+.deleteButton {
+    color: black;
+    cursor: pointer;
+    font-size: 14px;
 }
