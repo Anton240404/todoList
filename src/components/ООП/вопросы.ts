@@ -1,3 +1,4 @@
+/*
 class Car {
     public number: string = '';
     private forbiddenLetters: string[] = 'БГДЁЖЗИЙЛПФЦЧШЩЪЫЬЭЮЯ'.split('');
@@ -103,3 +104,4 @@ createUser('', 1, new VkLogger());
 
 // Нельзя создавать
 // new Transport()
+*/
