@@ -1,14 +1,7 @@
 import './components/css/reset.css';
 import './components/css/todo.css';
-import { Button } from './components/button/button';
-import { AddButton } from './components/add-button/add-button';
-import { TodoList } from './components/todo-list/todo-list.tsx';
-import { InteractiveButtonEdit } from './components/interactive-button/interactive-button-edit.tsx';
-import { Input } from './components/todo-list/input/input.tsx';
-import { Textarea } from './components/todo-list/texterea/textarea.tsx';
-import { Position } from './components/position/position.tsx';
-import { PositionNew } from './components/position/position.new.tsx';
-import { Project } from './components/project/project.tsx';
+import { Table } from './components/table/table';
+import React from 'react';
 
 export type Todo = {
     id: string;
@@ -17,5 +10,43 @@ export type Todo = {
 };
 
 export const App = () => {
-    return <Project />;
+    return (
+        <>
+            {Test({ name: 'Антон', age: 27 })}
+            <Test name={'Антон'} age={27} />
+            <Table
+                items={[
+                    {
+                        id: '1',
+                        text: 'text 1',
+                        description: 'description 1',
+                    },
+                    {
+                        id: '2',
+                        text: 'text 2',
+                        description: 'description 2',
+                    },
+                    {
+                        id: '3',
+                        text: 'text 3',
+                        description: 'description 3',
+                    },
+                    {
+                        id: '4',
+                        text: 'text 4',
+                        description: 'description 4',
+                    },
+                ]}
+            />
+        </>
+    );
 };
+
+function Test(props: any) {
+    console.log(props);
+    return (
+        <p>
+            {props.name} {props.age}
+        </p>
+    );
+}
