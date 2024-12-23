@@ -7,8 +7,8 @@ type Transform = (element: number) => number;
 function _map(array: number[], transform: Transform): number[] {
     const newArray: number[] = [];
     for (let i = 0; i < array.length; i++) {
-        const res = transform(array[i]);
-        newArray.push(res);
+        const transformedItem = transform(array[i]);
+        newArray.push(transformedItem);
     }
     return newArray;
 }
