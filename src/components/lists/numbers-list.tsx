@@ -14,9 +14,7 @@ export function TableNumbers() {
     // fn(3) -> "3"
     // const result = [fn(1), fn(2), fn(3)] // ['1', '2', '3']
     // return result
-    const res = numbers.map((elem) => {
-        return elem + '';
-    });
+    const res = numbers.map((elem) => elem + '');
 
     console.log(res);
 
