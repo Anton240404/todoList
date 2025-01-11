@@ -64,6 +64,8 @@ export function TableNumbers() {
 
     // [1, 2, 3].filter(() => null) // []
     // [1, 2, 3].filter(() => true); // [1,2,3]
+    const xax = [1, 2, 3, 4, 5].find((elem) => elem > 2);
+    console.log(xax);
 
     return (
         <div>
@@ -75,3 +77,10 @@ export function TableNumbers() {
         </div>
     );
 }
+
+const data = [62, 12, 32, 12, 37];
+
+const result5 = data
+    .join('')
+    .split('')
+    .map((x) => x % 2 === 0);

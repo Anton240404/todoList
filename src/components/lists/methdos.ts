@@ -44,3 +44,29 @@ function _filter(array: number[], callback: FilterFn): number[] {
 
 const fillter = _filter(array, (elem) => elem % 2 === 0);
 console.log(fillter);
+
+function _findIndex(array: unknown[], callback: (value: unknown) => boolean) {
+    for (let i = 0; i < array.length; i++) {
+        if (callback(array[i])) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+function _find(array: unknown[], callback: (value: unknown) => boolean) {
+    for (let i = 0; i < array.length; i++) {
+        if (callback(array[i])) {
+            return array[i];
+        }
+    }
+    return undefined;
+}
+function _includes(array: unknown[], value: unknown): boolean {
+     for (let i = 0; i < array.length; i++) {
+         if (array[i] === value) {
+             return true
+         }
+     }
+     return false
+     }
