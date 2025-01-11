@@ -11,7 +11,7 @@ const _map = (
 
 const _forEach = (
     arr: number[],
-    callback: (item: number, index: number, array: number[]) => void
+    callback: (item: number,ё index: number, array: number[]) => void
 ): void => {
     for (let i = 0; i < arr.length; i++) {
         callback(arr[i], i, arr);

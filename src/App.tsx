@@ -1,8 +1,6 @@
+import React, { useState } from 'react';
 import './components/css/reset.css';
 import './components/css/todo.css';
-import { Table } from './components/table/table';
-import React from 'react';
-import { TableNumbers } from './components/lists/numbers-list';
 
 export type Todo = {
     id: string;
@@ -10,46 +8,42 @@ export type Todo = {
     description: string;
 };
 
-export const App = () => {
-    return <TableNumbers />;
-    // return (
-    //     <>
-    //         {Test({ name: 'Антон', age: 27 })}
-    //         <Test name={'Антон'} age={27} />
-    //         <Table
-    //             items={[
-    //                 {
-    //                     id: '1',
-    //                     text: 'text 1',
-    //                     description: 'description 1',
-    //                 },
-    //                 {
-    //                     id: '2',
-    //                     text: 'text 2',
-    //                     description: 'description 2',
-    //                 },
-    //                 {
-    //                     id: '3',
-    //                     text: 'text 3',
-    //                     description: 'description 3',
-    //                 },
-    //                 {
-    //                     id: '4',
-    //                     text: 'text 4',
-    //                     description: 'description 4',
-    //                 },
-    //             ]}
-    //         />
-    //         {Table({ items: [] })}
-    //     </>
-    // );
-};
+const names = ['A', 'B'];
+const [a, b] = names;
 
-function Test(props: any) {
-    console.log(props);
+const numbers = [1, 2, 3];
+
+export const App = () => {
+    const [state, setState] = useState(10);
+    const [show, setShow] = useState(false);
+
     return (
-        <p>
-            {props.name} {props.age}
-        </p>
+        <div>
+            <button
+                onClick={() => {
+                    setState(state + 1);
+                }}
+            >
+                +
+            </button>
+            <button
+                onClick={() => {
+                    setState(state - 1);
+                }}
+            >
+                -
+            </button>
+            {state > 0 && <div>{state} &gt; 0</div>}
+
+            <button onClick={() => setShow(!show)}>Toggle</button>
+
+            {show && (
+                <>
+                    {numbers.map((x) => (
+                        <p>{x}</p>
+                    ))}
+                </>
+            )}
+        </div>
     );
-}
+};
