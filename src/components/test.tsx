@@ -9,15 +9,23 @@
 // }
 import React, {useState} from 'react';
 
+// function useState(initialValue) {
+//    const setState = () => {}
+//
+//    const state = initialValue
+//
+//     return [state, setState]
+// }
+
 // export function Test() {
 //     const [counter, setCounter] = useState(1);
 //     return (
 //         <div>
 //             <p>{counter}</p>
-//             <button onClick={() => setCounter((prev) => prev + 1)}>
+//             <button onClick={() => setCounter(counter + 1)}>
 //                 Увеличить
 //             </button>
-//             <button onClick={() => setCounter((prev) => prev - 1)}>
+//             <button onClick={() => setCounter(counter - 1)}>
 //                 Уменьшить
 //             </button>
 //         </div>
