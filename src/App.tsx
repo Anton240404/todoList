@@ -4,11 +4,11 @@ import { PaginationTest } from './components/pagination';
 import { StepsTest } from './components/steps';
 import { CollapseTest } from './components/collapse';
 import { PasswordReq } from './components/password-requirements/password-requirements';
-import { Test } from './components/test';
 import { MyInput } from './components/my-input/my-input';
 import { Accordion, Spoiler } from './components/spoiler';
 import { Breadcrumbs } from './Breadcrumbs/breadcrumbs';
 import { AlertComponent } from './Alert-component/AlertComponent';
+import { AvatarGroup } from './components/avatar-group/avatar-group';
 
 // 1) Добавить лейбл label="Выберите тип обучения" - подпись к селекту
 // 2) Выделять уже выбранный айтем
@@ -44,9 +44,17 @@ export const App = () => {
             />*/}
             {/*   <Accordion />*/}
             {/* <Breadcrumbs items={breadcrumbs} />*/}
-            <AlertComponent
+            {/* <AlertComponent
                 severity="success"
                 text="This is a success Alert."
+            /> */}
+            <AvatarGroup
+                items={[
+                    { url: 'https//:example.com', firstName: '', lastName: '' },
+                    { url: '', firstName: 'Иван', lastName: 'Иванов' },
+                    { url: '', firstName: 'Иван', lastName: 'Иванов' },
+                ]}
+                visibleCount={6}
             />
         </div>
     );
