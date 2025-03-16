@@ -31,7 +31,7 @@ export function AvatarGroup(props: Props) {
 }
 
 // 1) Отрисовать все круги
-// 1.1) Если firstName и lastName иначе url
+// 1.1) Если firstName и lastName иначе <img src="url" /> или через bg-image
 // 2) Отрисовать первые visibleCount кругов
 // 3) Узнать, сколько не отрисовали (+6)
 // 4) Нарисовать +6 (если неотрисованных > 0)
