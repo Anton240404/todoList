@@ -1,49 +1,37 @@
 import React, { useState } from 'react';
+import styls from './breadcrumbs.module.css';
+
+type BreadcrumbItem = {
+    label: string;
+    href: string;
+};
 
 type BreadcrumbsProps = {
-    // Вынести в отдельный тип
-    items: { label: string; href: string }[];
+    items: BreadcrumbItem[];
 };
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     return (
-        // Стили вынести в css
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <nav className={'styls.breadcrumbs'}>
             {items.map((item, index) => {
                 const isActive = activeIndex === index;
 
-                // Где key ?
                 return (
-                    <span
-                        // Стили вынести в css
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                        }}
-                    >
+                    <span key={index} className={'styls.breadcrumbItem'}>
                         <a
                             href={item.href}
                             onClick={(e) => {
                                 e.preventDefault();
                                 setActiveIndex(index);
                             }}
-                            // Стили вынести в css
-                            style={{
-                                textDecoration: 'none',
-                                color: isActive ? 'black' : 'blue', // Активный элемент черный, остальные синие
-                                fontWeight: isActive ? 'bold' : 'normal', // Активный элемент жирный, остальные обычные
-                                // Для чего ?
-                                cursor: 'pointer',
-                            }}
+                            className={isActive ? styls.active : ''}
                         >
                             {item.label}
                         </a>
                         {index !== items.length - 1 && (
-                            // Стили вынести в css
-                            <span style={{ color: '#aaa' }}>/</span>
+                            <span className={'styls.separator'}>/</span>
                         )}
                     </span>
                 );

@@ -1,0 +1,28 @@
+
+.listContainer {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 8px;
+    border-box: 2px solid black;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.97);
+    padding: 16px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.inputField {
+    width: 99%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.buttonAdd {
+    margin-top: 3px;
+}
