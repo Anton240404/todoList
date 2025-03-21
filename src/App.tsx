@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Select, SelectTest } from './components/select';
+/*import { Select, SelectTest } from './components/select';
 import { PaginationTest } from './components/pagination';
 import { StepsTest } from './components/steps';
 import { CollapseTest } from './components/collapse';
@@ -7,8 +7,9 @@ import { PasswordReq } from './components/password-requirements/password-require
 import { MyInput } from './components/my-input/my-input';
 import { Accordion, Spoiler } from './components/spoiler';
 import { Breadcrumbs } from './Breadcrumbs/breadcrumbs';
-import { AlertComponent } from './Alert-component/AlertComponent';
+import { AlertComponent } from './Alert-component/AlertComponent';*/
 import { AvatarGroup } from './components/avatar-group/avatar-group';
+import { Phone, Strings, Strings2 } from './components/test/works';
 
 // 1) Добавить лейбл label="Выберите тип обучения" - подпись к селекту
 // 2) Выделять уже выбранный айтем
@@ -48,14 +49,27 @@ export const App = () => {
                 severity="success"
                 text="This is a success Alert."
             /> */}
-            <AvatarGroup
+            {/* <AvatarGroup
                 items={[
+                    {
+                        url: 'https://img.freepik.com/premium-photo/composition-with-html-system-for-websites_23-2150866296.jpg',
+                        firstName: '',
+                        lastName: '',
+                    },
+                    { url: '', firstName: 'Иван', lastName: 'Иванов' },
+                    { url: '', firstName: 'Иван', lastName: 'Иванов' },
+                    { url: 'https//:example.com', firstName: '', lastName: '' },
+                    { url: '', firstName: 'Иван', lastName: 'Иванов' },
+                    { url: '', firstName: 'Иван', lastName: 'Иванов' },
                     { url: 'https//:example.com', firstName: '', lastName: '' },
                     { url: '', firstName: 'Иван', lastName: 'Иванов' },
                     { url: '', firstName: 'Иван', lastName: 'Иванов' },
                 ]}
-                visibleCount={6}
-            />
+                visibleCount={3}
+            />*/}
+            {/*<Strings text={'Домашняя работа'} />*/}
+            {/*<Strings2 text={',,,,,'} />*/}
+            <Phone number={'+7919999999'} />
         </div>
     );
 };
