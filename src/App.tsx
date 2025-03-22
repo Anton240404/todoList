@@ -9,7 +9,13 @@ import { Accordion, Spoiler } from './components/spoiler';
 import { Breadcrumbs } from './Breadcrumbs/breadcrumbs';
 import { AlertComponent } from './Alert-component/AlertComponent';*/
 import { AvatarGroup } from './components/avatar-group/avatar-group';
-import { Phone, Strings, Strings2 } from './components/test/works';
+import {
+    Phone,
+    Strings,
+    Strings2,
+    ToTitleCase,
+    Word,
+} from './components/test/works';
 
 // 1) Добавить лейбл label="Выберите тип обучения" - подпись к селекту
 // 2) Выделять уже выбранный айтем
@@ -69,7 +75,9 @@ export const App = () => {
             />*/}
             {/*<Strings text={'Домашняя работа'} />*/}
             {/*<Strings2 text={',,,,,'} />*/}
-            <Phone number={'+7919999999'} />
+            {/* <Phone number={'+7919999999'} />*/}
+            {/*<Word text={'Hello World, how are yourss?'} />*/}
+            <ToTitleCase text={'hello world, how are yours?'} />
         </div>
     );
 };

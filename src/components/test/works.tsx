@@ -8,6 +8,14 @@ type Props2 = {
     number: string;
 };
 
+type Props3 = {
+    text: string;
+};
+
+type Props4 = {
+    text: string;
+};
+
 export function Strings(props: Props) {
     const vowels = 'аеёиоуыэюяAEIOUаеёиоуыэюяaeiou';
     const consonants = 'бвгджзйклмнпрстфхцчшщBCDFGHJKLMNPQRSTVWXYZ';
@@ -69,4 +77,31 @@ export function Phone(props: Props2) {
             <div>{isValid ? 'Номер валиден' : ' Номер НЕ валиден'}</div>
         </div>
     );
+}
+
+export function Word(props: Props3) {
+    const words = props.text.split(' ');
+
+    let longest = '';
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].length > longest.length) {
+            longest = words[i];
+        }
+    }
+    return <div>это слово длиннее: {longest}</div>;
+}
+
+export function ToTitleCase(props: Props4) {
+    const words = props.text.split(' ');
+
+    const upperCase = [];
+
+    for (let i = 0; i < words.length; i++) {
+        const word = words[i];
+        const formattedWord =
+            word[0].toUpperCase() + word.slice(1).toLowerCase();
+        upperCase.push(formattedWord);
+    }
+
+    return <div>{upperCase.join(' ')}</div>;
 }
