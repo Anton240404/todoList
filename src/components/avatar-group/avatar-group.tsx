@@ -23,15 +23,22 @@ function getInitials2(firstName: string, lastName: string): string {
     return `${firstName[0]}${lastName[0]}`;
 }
 
+const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#95a5a6'];
+
 export function AvatarGroup(props: Props) {
     const count =
         props.items.length > props.visibleCount
             ? props.items.length - props.visibleCount
             : 0;
+
     return (
         <div className={style.root}>
             {props.items.slice(0, props.visibleCount).map((item, i) => (
-                <div className={style.avatar} key={i}>
+                <div
+                    className={style.avatar}
+                    key={i}
+                    style={{ backgroundColor: colors[i % colors.length] }}
+                >
                     {item.url ? (
                         <img
                             src={item.url}
@@ -43,7 +50,17 @@ export function AvatarGroup(props: Props) {
                     )}
                 </div>
             ))}
-            {count > 0 && <div className={style.avatar}>+{count}</div>}
+            {count > 0 && (
+                <div
+                    className={style.avatar}
+                    style={{
+                        backgroundColor:
+                            colors[props.visibleCount % colors.length],
+                    }}
+                >
+                    +{count}
+                </div>
+            )}
         </div>
     );
 }

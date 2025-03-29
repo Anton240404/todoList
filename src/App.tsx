@@ -10,12 +10,18 @@ import { Breadcrumbs } from './Breadcrumbs/breadcrumbs';
 import { AlertComponent } from './Alert-component/AlertComponent';*/
 import { AvatarGroup } from './components/avatar-group/avatar-group';
 import {
+    CountWords,
+    ExtractNumbers,
+    IsPalindrome,
+    isPalindrome,
     Phone,
     Strings,
     Strings2,
     ToTitleCase,
     Word,
 } from './components/test/works';
+import { Clock } from './components/times/time';
+import { Photos, PhotosCRUD } from './components/json/json';
 
 // 1) Добавить лейбл label="Выберите тип обучения" - подпись к селекту
 // 2) Выделять уже выбранный айтем
@@ -75,9 +81,18 @@ export const App = () => {
             />*/}
             {/*<Strings text={'Домашняя работа'} />*/}
             {/*<Strings2 text={',,,,,'} />*/}
-            {/* <Phone number={'+7919999999'} />*/}
+            {/*<Phone number={'+791999991211111111111111111199'} />*/}
             {/*<Word text={'Hello World, how are yourss?'} />*/}
-            <ToTitleCase text={'hello world, how are yours?'} />
+            {/*<ToTitleCase text={'hello world, how are yours?'} />*/}
+            {/*<IsPalindrome text={'А роза упала на лапу'} />*/}
+            {/*<CountWords text={'А роза упала на лапу'} />*/}
+            {/* <ExtractNumbers
+                text={
+                    'мой пароль - 12323.2121 и необходимо оплатить за облако 22.234 руб'
+                }
+            />*/}
+            {/*<Clock />*/}
+            <Photos />
         </div>
     );
 };
