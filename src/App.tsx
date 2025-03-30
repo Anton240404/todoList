@@ -22,6 +22,7 @@ import {
 } from './components/test/works';
 import { Clock } from './components/times/time';
 import { Photos, PhotosCRUD } from './components/json/json';
+import { Test1 } from './components/training/test1';
 
 // 1) Добавить лейбл label="Выберите тип обучения" - подпись к селекту
 // 2) Выделять уже выбранный айтем
@@ -93,6 +94,7 @@ export const App = () => {
             />*/}
             {/*<Clock />*/}
             <Photos />
+            {/*<Test1 userId={1} />*/}
         </div>
     );
 };

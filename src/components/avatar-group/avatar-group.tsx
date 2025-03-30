@@ -3,6 +3,7 @@ import style from './avatar.module.css';
 
 type Props = {
     items: Item[];
+    title: string;
     visibleCount: number; // сколько кругов отрисовать
 };
 
@@ -25,32 +26,89 @@ function getInitials2(firstName: string, lastName: string): string {
 
 const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#95a5a6'];
 
+const getInvisibleCount2 = (items: Item[], visibleCount: number): number => {
+    if (items.length > visibleCount) {
+        return items.length - visibleCount;
+    } else {
+        return 0;
+    }
+};
+
+const getInvisibleCount3 = (
+    itemsCount: number,
+    visibleCount: number
+): number => {
+    if (itemsCount > visibleCount) {
+        return itemsCount - visibleCount;
+    } else {
+        return 0;
+    }
+};
+
+const getInvisibleCount4 = (props: Props): number => {
+    if (props.items.length > props.visibleCount) {
+        return props.items.length - props.visibleCount;
+    }
+    return 0;
+};
+
+const names = ['A', 'B', 'C'];
+
+function sum(a: number, b: number): number {
+    return a + b;
+}
+
+const a = 5;
+const b = 7;
+
+function sevenPlusFive() {
+    return sum(a, b);
+}
+
+function countNames(namesCount: number): void {
+    return console.log(`В массиве ${namesCount} имен`);
+}
+
+countNames(names.length);
+
 export function AvatarGroup(props: Props) {
-    const count =
-        props.items.length > props.visibleCount
-            ? props.items.length - props.visibleCount
-            : 0;
+    const getCount = () => {
+        if (props.items.length > props.visibleCount) {
+            return props.items.length - props.visibleCount;
+        } else {
+            return 0;
+        }
+    };
+
+    const renderItems = () => {
+        return (
+            <div>
+                {/* переписать на return */}
+                {props.items.slice(0, props.visibleCount).map((item, i) => (
+                    <div
+                        className={style.avatar}
+                        key={i}
+                        style={{ backgroundColor: colors[i % colors.length] }}
+                    >
+                        {item.url ? (
+                            <img
+                                src={item.url}
+                                alt={`${item.firstName} ${item.lastName}`}
+                                className={style.avatarImage}
+                            />
+                        ) : (
+                            getInitials2(item.firstName, item.lastName)
+                        )}
+                    </div>
+                ))}
+            </div>
+        );
+    };
 
     return (
         <div className={style.root}>
-            {props.items.slice(0, props.visibleCount).map((item, i) => (
-                <div
-                    className={style.avatar}
-                    key={i}
-                    style={{ backgroundColor: colors[i % colors.length] }}
-                >
-                    {item.url ? (
-                        <img
-                            src={item.url}
-                            alt={`${item.firstName} ${item.lastName}`}
-                            className={style.avatarImage}
-                        />
-                    ) : (
-                        getInitials2(item.firstName, item.lastName)
-                    )}
-                </div>
-            ))}
-            {count > 0 && (
+            {renderItems()}
+            {getInvisibleCount4(props) > 0 && (
                 <div
                     className={style.avatar}
                     style={{
@@ -58,7 +116,7 @@ export function AvatarGroup(props: Props) {
                             colors[props.visibleCount % colors.length],
                     }}
                 >
-                    +{count}
+                    +{getInvisibleCount4(props)}
                 </div>
             )}
         </div>
