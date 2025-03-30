@@ -26,51 +26,6 @@ function getInitials2(firstName: string, lastName: string): string {
 
 const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#95a5a6'];
 
-const getInvisibleCount2 = (items: Item[], visibleCount: number): number => {
-    if (items.length > visibleCount) {
-        return items.length - visibleCount;
-    } else {
-        return 0;
-    }
-};
-
-const getInvisibleCount3 = (
-    itemsCount: number,
-    visibleCount: number
-): number => {
-    if (itemsCount > visibleCount) {
-        return itemsCount - visibleCount;
-    } else {
-        return 0;
-    }
-};
-
-const getInvisibleCount4 = (props: Props): number => {
-    if (props.items.length > props.visibleCount) {
-        return props.items.length - props.visibleCount;
-    }
-    return 0;
-};
-
-const names = ['A', 'B', 'C'];
-
-function sum(a: number, b: number): number {
-    return a + b;
-}
-
-const a = 5;
-const b = 7;
-
-function sevenPlusFive() {
-    return sum(a, b);
-}
-
-function countNames(namesCount: number): void {
-    return console.log(`В массиве ${namesCount} имен`);
-}
-
-countNames(names.length);
-
 export function AvatarGroup(props: Props) {
     const getCount = () => {
         if (props.items.length > props.visibleCount) {
