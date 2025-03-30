@@ -27,13 +27,10 @@ function getInitials2(firstName: string, lastName: string): string {
 const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#95a5a6'];
 
 export function AvatarGroup(props: Props) {
-    const getCount = () => {
-        if (props.items.length > props.visibleCount) {
-            return props.items.length - props.visibleCount;
-        } else {
-            return 0;
-        }
-    };
+    const count =
+        props.items.length > props.visibleCount
+            ? props.items.length - props.visibleCount
+            : 0;
 
     const renderItems = () => {
         return (
@@ -63,7 +60,7 @@ export function AvatarGroup(props: Props) {
     return (
         <div className={style.root}>
             {renderItems()}
-            {getInvisibleCount4(props) > 0 && (
+            {count > 0 && (
                 <div
                     className={style.avatar}
                     style={{
@@ -71,7 +68,7 @@ export function AvatarGroup(props: Props) {
                             colors[props.visibleCount % colors.length],
                     }}
                 >
-                    +{getInvisibleCount4(props)}
+                    +{count}
                 </div>
             )}
         </div>
