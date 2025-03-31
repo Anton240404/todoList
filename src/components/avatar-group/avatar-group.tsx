@@ -32,10 +32,9 @@ export function AvatarGroup(props: Props) {
             ? props.items.length - props.visibleCount
             : 0;
 
-    const renderItems = () => {
+    /*const renderItems = () => {
         return (
             <div>
-                {/* переписать на return */}
                 {props.items.slice(0, props.visibleCount).map((item, i) => (
                     <div
                         className={style.avatar}
@@ -55,11 +54,29 @@ export function AvatarGroup(props: Props) {
                 ))}
             </div>
         );
-    };
+    };*/
 
     return (
         <div className={style.root}>
-            {renderItems()}
+            <div>
+                {props.items.slice(0, props.visibleCount).map((item, i) => (
+                    <div
+                        className={style.avatar}
+                        key={i}
+                        style={{ backgroundColor: colors[i % colors.length] }}
+                    >
+                        {item.url ? (
+                            <img
+                                src={item.url}
+                                alt={`${item.firstName} ${item.lastName}`}
+                                className={style.avatarImage}
+                            />
+                        ) : (
+                            getInitials2(item.firstName, item.lastName)
+                        )}
+                    </div>
+                ))}
+            </div>
             {count > 0 && (
                 <div
                     className={style.avatar}
