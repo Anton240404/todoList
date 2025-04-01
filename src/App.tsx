@@ -93,8 +93,8 @@ export const App = () => {
                 }
             />*/}
             {/*<Clock />*/}
-            <Photos />
-            {/*<Test1 userId={1} />*/}
+            {/*   <Photos />*/}
+            <Test1 userId={1} />
         </div>
     );
 };

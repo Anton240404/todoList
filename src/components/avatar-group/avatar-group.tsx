@@ -21,10 +21,21 @@ const getInitials = (x: Item): string => {
 };
 
 function getInitials2(firstName: string, lastName: string): string {
+    const x = 'hello';
     return `${firstName[0]}${lastName[0]}`;
 }
 
 const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#95a5a6'];
+
+[1, 2, 3].map((x) => {
+    console.log(123);
+    console.log(312);
+
+    4;
+    5;
+
+    const y = 16;
+});
 
 export function AvatarGroup(props: Props) {
     const count =
@@ -56,6 +67,7 @@ export function AvatarGroup(props: Props) {
         );
     };*/
 
+    // [1, 2, 3].map((x) => 2 * 2);
     return (
         <div className={style.root}>
             <div>

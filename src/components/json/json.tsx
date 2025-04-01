@@ -11,15 +11,16 @@ export const Photos = () => {
     const [photos, setPhotos] = useState<Photo[]>([]);
 
     useEffect(() => {
+        // mount
         fetch('https://jsonplaceholder.typicode.com/photos?_limit=10')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Ошибка загрузки данных');
-                }
-                return response.json();
-            })
+            .then((response) => response.json())
             .then((data: Photo[]) => setPhotos(data))
             .catch((error) => console.error('Ошибка:', error));
+
+        // unmount - запросить у чата пару примеров unmount
+        return () => {
+            console.log('Эта функция вызывается, когда компонент удалился');
+        };
     }, []);
 
     const deletePhoto = (id: number) => {

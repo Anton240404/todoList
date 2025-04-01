@@ -6,91 +6,32 @@ type Post = {
     title: string;
     body: string;
 };
-type User = {
+
+type Props = {
     userId: number;
 };
 
-export function Test1(props: User) {
-    const [posts, setPosts] = useState<Post[]>([]);
+export function Test1(props: Props) {
+    const [posts, setPosts] = useState<Post[]>([
+        { id: 1, title: 'asdasdas', body: 'asdasdas' },
+        { id: 2, title: 'asdasdasss', body: 'asdasdasss' },
+        { id: 3, title: 'asdasdasssss', body: 'asdasdasssss' },
+    ]);
     const [newTitle, setNewTitle] = useState<string>('');
-    const [newText, setNewText] = useState<string>('');
+    const [newText, setNewText] = useState<string>('abc');
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users/1')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('error');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                console.log('Имя пользователя:', data.name);
-                console.log('Email пользователя:', data.email);
-            })
-            .catch((error) => {
-                console.log('Проблема с fetch запросом:', error);
-            });
-    }, [props.userId]);
+    // Сделать 2 инпута
 
-    const createPost = () => {
-        const newPost: Post = {
-            id: Date.now(),
-            title: newTitle,
-            body: newText,
-        };
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json', // Тип отправляемых данных
-            },
-            body: JSON.stringify(newPost), // Преобразуем JS-объект в JSON-строку
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Ошибка при создании');
-                }
-                return response.json;
-            })
-            .then((data) => console.log('Пост успешно создан:', data))
-            .catch((error) => console.error('Ошибка:', error));
-    };
-
-    const updatePost = () => {
-        fetch('https://jsonplaceholder.typicode.com/posts/1', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: 1,
-                title: 'Обновленный заголовок',
-                body: 'Обновленное содержимое',
-                userId: 1,
-            }),
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Ошибка при обновлении');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                console.log('Пост успешно обновлен:', data);
-            })
-            .catch((error) => {
-                console.error('Ошибка:', error);
-            });
-    };
-
-    const deletePhoto = (id: number) => {
-        fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-            method: 'DELETE',
-        })
-            .then(() => {
-                setPosts(posts.filter((post) => post.id !== id));
-            })
-            .catch((error) => console.error('Ошибка удаления:', error));
-    };
-
-    return <div>Информация о пользователе {props.userId}</div>;
+    return (
+        <div>
+            {posts.map((post) => {
+                return (
+                    <div key={post.id}>
+                        <h1>{post.title}</h1>
+                        <div>{post.body}</div>
+                    </div>
+                );
+            })}
+        </div>
+    );
 }
