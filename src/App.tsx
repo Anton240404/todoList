@@ -94,7 +94,7 @@ export const App = () => {
             />*/}
             {/*<Clock />*/}
             {/*   <Photos />*/}
-            <Test1 userId={1} />
+            <Test1 />
         </div>
     );
 };
