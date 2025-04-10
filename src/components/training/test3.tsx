@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import style from './style.module.css';
 
 type Post = {
@@ -9,37 +9,42 @@ type Post = {
 
 export function Test1() {
     const [posts, setPosts] = useState<Post[]>([
-        { id: 1, title: 'Первый пост', body: 'Текст первого поста' },
-        { id: 2, title: 'Второй пост', body: 'Текст второго поста' },
-        { id: 3, title: 'Третий пост', body: 'Текст третьего поста' },
+        {id: 1, title: 'Первый пост', body: 'Текст первого поста'},
+        {id: 2, title: 'Второй пост', body: 'Текст второго поста'},
+        {id: 3, title: 'Третий пост', body: 'Текст третьего поста'},
     ]);
-    const [newTitle, setNewTitle] = useState<string>('');
-    const [newText, setNewText] = useState<string>('');
+    const [newTitle, setNewTitle] = useState('');
+    const [newText, setNewText] = useState('');
 
     const addPost = () => {
         if (!newTitle.trim() || !newText.trim()) return;
 
-        const newPost = {
+        const newPost: Post = {
             id: Date.now(),
             title: newTitle,
             body: newText,
         };
+        // 6
         setPosts([...posts, newPost]);
+        // setPosts(posts.push(newPost)); 2 причины
         setNewTitle('');
         setNewText('');
     };
 
     const deletePost = (id: number) => {
+        // 4
         setPosts(posts.filter((post) => post.id !== id));
     };
 
     return (
+        // 5
         <div className={style.container}>
             <div className={style.inputContainer}>
                 <input
                     type={'text'}
                     placeholder="Введите заголовок"
                     value={newTitle}
+                    {/* 6 */}
                     onChange={(e) => setNewTitle(e.target.value)}
                     className={style.input}
                 />
