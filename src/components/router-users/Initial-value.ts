@@ -14,14 +14,8 @@ export const nav = {
 const base = '/home/user/view/details/';
 
 const x = nav.base + '12376152837162';
-const x = base + '6456456';
-const x = base + '43567456756';
-const x = base + '2';
-const x = base + '3';
-const x = base + '4';
-const x = base + '5';
 
-const nav = {
+const nave = {
     main: '/',
     archive: '/archive',
     settings: '/settings',

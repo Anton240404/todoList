@@ -20,28 +20,14 @@ export function RouterDom() {
                 <Link to="/">Главная</Link>
                 <a href="/">Главная 2</a>
                 <Link to={nav.about}>О нас</Link>
-                <Link to="/user/42">Пользователь 42</Link>
+                <Link to={nav.user(42)}>Пользователь 42</Link>
             </nav>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path={nav.about} element={<About />} />
                 {/* 3 */}
-                <Route path="/user/:id" element={<User />} />
-                <Route element={<Layout />}>
-                    <Route path="/a" element={<User />} />
-                    <Route path="/b" element={<div>b</div>} />
-                    <Route path="/c" element={<div>c</div>} />
-                </Route>
+                <Route path={nav.user(':id')} element={<User />} />
             </Routes>
-        </div>
-    );
-}
-
-function Layout() {
-    return (
-        <div>
-            <Header />
-            <Outlet />
         </div>
     );
 }
