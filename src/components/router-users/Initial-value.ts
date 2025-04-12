@@ -5,6 +5,7 @@ export const nav = {
     user(id: string | number) {
         return '/users/' + id;
     },
+    create: '/create',
 };
 
 //    nav.user(':id') = //     /user/:id

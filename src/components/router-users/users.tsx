@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { nav } from './Initial-value';
 
 export type User = {
     id: string;
@@ -21,7 +22,7 @@ export function RouterUsers(props: Props) {
                     <div>{user.text}</div>
                 </div>
             ))}
-            <Link to="/create">
+            <Link to={nav.create}>
                 <button>Добавить нового</button>
             </Link>
         </div>
