@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { User } from './users';
 import { nav } from './Initial-value';
+import style from './ccs.module.css';
 
 type Props = {
     setUsers: React.Dispatch<React.SetStateAction<User[]>>;
@@ -27,13 +28,15 @@ export function CreateUser(props: Props) {
 
     return (
         <div>
-            <h2>Создать пользователя</h2>
+            <h2 className={style.h2}>Создать пользователя</h2>
             <input
+                className={style.input}
                 placeholder="Имя"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />
             <input
+                className={style.input}
                 placeholder="Описание"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
